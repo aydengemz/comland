@@ -11,7 +11,7 @@ export default function Home() {
   const [currentView, setCurrentView] = useState<View>('regionSelect');
   const [selectedRegion, setSelectedRegion] = useState<Region>(null);
 
-  const affiliateBaseLink = "https://glstrck.com/aff_c?offer_id=1361&aff_id=11848";
+  const affiliateBaseLink = "https://glstrck.com/aff_c?offer_id=1084&aff_id=11848";
   const affiliateLink = affiliateBaseLink; // You can append tracking params if needed: e.g. ${affiliateBaseLink}?sub1=${selectedRegion}
 
   const handleRegionSelect = (region: Region) => {
