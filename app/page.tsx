@@ -24,7 +24,6 @@ export default function Home() {
   const cardBaseStyle = "bg-white p-4 py-6 sm:p-6 sm:py-8 rounded-lg shadow-lg w-full max-w-sm";
   // Adjusted sm:h-13 to sm:h-12 for standard Tailwind scale
   const primaryButtonStyle = "w-full rounded-md border border-transparent transition-colors flex items-center justify-center bg-[#03CF30] text-white gap-3 hover:bg-[#02b629] font-semibold text-base h-11 sm:h-12 px-5 sm:px-7 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2";
-  const secondaryButtonStyle = "w-auto rounded-md border border-[#03CF30] transition-colors flex items-center justify-center bg-white text-[#03CF30] gap-3 hover:bg-[#f0fff2] font-semibold text-sm h-10 px-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2";
   const stepNumberStyle = "flex-shrink-0 bg-[#03CF30] text-white rounded-full h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center font-bold text-xs";
   const stepTitleStyle = "font-semibold text-sm sm:text-base text-slate-700";
 
