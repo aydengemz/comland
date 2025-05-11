@@ -126,14 +126,6 @@ export default function Home() {
           </p>
         </main>
 
-        <button
-          onClick={() => setCurrentView('regionSelect')}
-          className={`${secondaryButtonStyle} mt-4`}
-          aria-label="Change selected region"
-        >
-          Change Region
-        </button>
-
         <footer className="mt-4 text-center text-xs text-slate-500">
           {/* Added "Level Up" for consistency */}
           <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
