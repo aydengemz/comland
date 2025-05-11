@@ -1,7 +1,7 @@
 'use client'; // Required for using React Hooks like useState
 
-import Image from "next/image"; // Keep if you plan to add images, otherwise it can be removed
 import { useState } from 'react';
+import "./globals.css";
 
 // Define types for better code management
 type View = 'regionSelect' | 'lander';
@@ -26,7 +26,6 @@ export default function Home() {
   const primaryButtonStyle = "w-full rounded-md border border-transparent transition-colors flex items-center justify-center bg-[#03CF30] text-white gap-3 hover:bg-[#02b629] font-semibold text-base h-11 sm:h-12 px-5 sm:px-7 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2";
   const secondaryButtonStyle = "w-auto rounded-md border border-[#03CF30] transition-colors flex items-center justify-center bg-white text-[#03CF30] gap-3 hover:bg-[#f0fff2] font-semibold text-sm h-10 px-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2";
   const stepNumberStyle = "flex-shrink-0 bg-[#03CF30] text-white rounded-full h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center font-bold text-xs";
-  const stepTextStyle = "text-xs sm:text-sm text-slate-600"; // Kept for potential future use if you add descriptions
   const stepTitleStyle = "font-semibold text-sm sm:text-base text-slate-700";
 
 
@@ -55,7 +54,7 @@ export default function Home() {
             </button>
           </div>
           <p className="text-xs text-slate-400 mt-5">
-            We'll customize your experience based on your location.
+            We&apos;ll customize your experience based on your location.
           </p>
         </main>
         <footer className="mt-5 text-center text-xs text-slate-500">
@@ -83,7 +82,7 @@ export default function Home() {
               <div className={stepNumberStyle}>1</div>
               <div>
                 {/* Corrected Step 1 text */}
-                <h3 className={stepTitleStyle}>Tap "Claim Now!" Button Below</h3>
+                <h3 className={stepTitleStyle}>Tap &quot;Claim Now!&quot; Button Below</h3>
                 {/* <p className={stepTextStyle}>Start by clicking the main button.</p> */}
               </div>
             </div>
