@@ -24,10 +24,8 @@ export default function Home() {
   const cardBaseStyle = "bg-white p-4 py-6 sm:p-6 sm:py-8 rounded-lg shadow-lg w-full max-w-sm";
   // Adjusted sm:h-13 to sm:h-12 for standard Tailwind scale
   const primaryButtonStyle = "w-full rounded-md border border-transparent transition-colors flex items-center justify-center bg-[#03CF30] text-white gap-3 hover:bg-[#02b629] font-semibold text-base h-11 sm:h-12 px-5 sm:px-7 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2";
-  const secondaryButtonStyle = "w-auto rounded-md border border-[#03CF30] transition-colors flex items-center justify-center bg-white text-[#03CF30] gap-3 hover:bg-[#f0fff2] font-semibold text-sm h-10 px-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2";
   const stepNumberStyle = "flex-shrink-0 bg-[#03CF30] text-white rounded-full h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center font-bold text-xs";
   const stepTitleStyle = "font-semibold text-sm sm:text-base text-slate-700";
-
 
   // Buffer Page: Region Selection
   if (currentView === 'regionSelect') {
@@ -112,27 +110,23 @@ export default function Home() {
             </div>
           </div>
 
-          <a
-            href={affiliateLink}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
+          <button
+            onClick={() => {
+              const ua = navigator.userAgent;
+              if (ua.includes("TikTok")) {
+                window.location.href = affiliateLink;
+              }
+            }}
             className={`${primaryButtonStyle} w-full text-md font-bold py-3`}
+            aria-label="Claim Now"
           >
             Claim Now!
-          </a>
+          </button>
 
           <p className="text-xs text-slate-500 mt-4 text-center">
             <b>Tip:</b> The more offers you complete, the more you may earn!
           </p>
         </main>
-
-        <button
-          onClick={() => setCurrentView('regionSelect')}
-          className={`${secondaryButtonStyle} mt-4`}
-          aria-label="Change selected region"
-        >
-          Change Region
-        </button>
 
         <footer className="mt-4 text-center text-xs text-slate-500">
           {/* Added "Level Up" for consistency */}
