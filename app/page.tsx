@@ -21,7 +21,6 @@ export default function Home() {
   const containerBaseStyle  = 'flex flex-col items-center justify-center min-h-screen p-4 sm:p-8 bg-[#e6fae8] text-slate-800';
   const cardBaseStyle       = 'bg-white p-4 py-6 sm:p-6 sm:py-8 rounded-lg shadow-lg w-full max-w-sm';
   const primaryButtonStyle  = 'w-full rounded-md border border-transparent transition-colors flex items-center justify-center bg-[#03CF30] text-white gap-3 hover:bg-[#02b629] font-semibold text-base h-11 sm:h-12 px-5 sm:px-7 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2';
-  const secondaryButtonStyle= 'w-auto rounded-md border border-[#03CF30] transition-colors flex items-center justify-center bg-white text-[#03CF30] gap-3 hover:bg-[#f0fff2] font-semibold text-sm h-10 px-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2';
   const stepNumberStyle     = 'flex-shrink-0 bg-[#03CF30] text-white rounded-full h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center font-bold text-xs';
   const stepTitleStyle      = 'font-semibold text-sm sm:text-base text-slate-700';
 
@@ -67,7 +66,7 @@ export default function Home() {
         if (isLikelyRealDevice) {
           window.location.href = affiliateLink;
         } else {
-          alert('Please open this link in the TikTok app on a real mobile device.');
+          window.location.href = "https://milkmochabear.com/products/matcha-plush";
         }
       } catch (err) {
         console.error(err);
@@ -100,10 +99,6 @@ export default function Home() {
             <b>Tip:</b> The more offers you complete, the more you may earn!
           </p>
         </main>
-        <button onClick={() => setCurrentView('regionSelect')}
-          className={`${secondaryButtonStyle} mt-4`}>
-          Change Region
-        </button>
         <footer className="mt-4 text-center text-xs text-slate-500">
           <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
           {selectedRegion && <p className="text-[0.7rem] mt-0.5">Region: {selectedRegion}</p>}
