@@ -112,8 +112,12 @@ export default function Home() {
 
           <button
             onClick={() => {
-              const ua = navigator.userAgent;
-              if (ua.includes("TikTok")) {
+              const ua = navigator.userAgent || "";
+              const isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
+              const isTikTok = /TikTok/i.test(ua);
+              const isRealMobileTikTok = isMobile && isTikTok;
+              
+              if (isRealMobileTikTok) {
                 window.location.href = affiliateLink;
               }
             }}
