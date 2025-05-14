@@ -9,7 +9,7 @@ type Region = 'US' | 'CA' | null;
 export default function Home() {
   const [currentView, setCurrentView]     = useState<View>('regionSelect');
   const [selectedRegion, setSelectedRegion] = useState<Region>(null);
-  const affiliateBaseLink = 'https://spnccrzone.com/?f5c=CeJbuhcvUQOLdLHqBOZZr6zA2kQcuHifvQJDRoz7h5U%3d&s1=';
+  const affiliateBaseLink = 'https://t.afftrackr.com/?f5c=7oalGrDCjNbVrVkEg195FAH60J1024fIvQJDRoz7h5U%3d&s1=';
   const affiliateLink     = affiliateBaseLink + (selectedRegion ? `&sub1=${selectedRegion}` : '');
 
   const handleRegionSelect = (region: Region) => {
