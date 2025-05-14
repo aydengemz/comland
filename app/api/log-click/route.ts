@@ -8,10 +8,9 @@ export async function POST(req: NextRequest) {
   const ip = forwarded.split(',')[0] || 'unknown';
 
   const md = new MobileDetect(ua);
-  const isMobile = !!md.mobile();   // any mobile device (phone/tablet)
-  const isPhone  = !!md.phone();    // specifically a phone
+  const isMobile = !!md.mobile();
+  const isPhone  = !!md.phone();
 
-  // no more TikTok check
   const isLikelyRealDevice = isMobile && isPhone;
 
   console.log({ ip, ua, isMobile, isPhone, isLikelyRealDevice });
