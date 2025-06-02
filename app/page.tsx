@@ -9,7 +9,7 @@ type Region = 'US' | 'CA' | null;
 export default function Home() {
   const [currentView, setCurrentView]     = useState<View>('regionSelect');
   const [selectedRegion, setSelectedRegion] = useState<Region>(null);
-  const affiliateBaseLink = 'https://rewarrdsgiant.com/aff_c?offer_id=1232&aff_id=139418&source=2step11';
+  const affiliateBaseLink = 'https://getrewarrds.com/aff_c?offer_id=1627&aff_id=139418';
   const affiliateLink     = affiliateBaseLink + (selectedRegion ? `&sub1=${selectedRegion}` : '');
 
   const handleRegionSelect = (region: Region) => {
@@ -18,10 +18,10 @@ export default function Home() {
   };
 
   // Shared styles
-  const containerBaseStyle  = 'flex flex-col items-center justify-center min-h-screen p-4 sm:p-8 bg-[#e6fae8] text-slate-800';
+  const containerBaseStyle  = 'flex flex-col items-center justify-center min-h-screen p-4 sm:p-8 bg-[#f5f3ff] text-slate-800';
   const cardBaseStyle       = 'bg-white p-4 py-6 sm:p-6 sm:py-8 rounded-lg shadow-lg w-full max-w-sm';
-  const primaryButtonStyle  = 'w-full rounded-md border border-transparent transition-colors flex items-center justify-center bg-[#03CF30] text-white gap-3 hover:bg-[#02b629] font-semibold text-base h-11 sm:h-12 px-5 sm:px-7 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#03CF30] focus:ring-offset-2';
-  const stepNumberStyle     = 'flex-shrink-0 bg-[#03CF30] text-white rounded-full h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center font-bold text-xs';
+  const primaryButtonStyle  = 'w-full rounded-md border border-transparent transition-colors flex items-center justify-center bg-[#6b46c1] text-white gap-3 hover:bg-[#553c9a] font-semibold text-base h-11 sm:h-12 px-5 sm:px-7 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#6b46c1] focus:ring-offset-2';
+  const stepNumberStyle     = 'flex-shrink-0 bg-[#6b46c1] text-white rounded-full h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center font-bold text-xs';
   const stepTitleStyle      = 'font-semibold text-sm sm:text-base text-slate-700';
 
   // ❶ Region selector
@@ -29,7 +29,7 @@ export default function Home() {
     return (
       <div className={containerBaseStyle}>
         <main className={`${cardBaseStyle} text-center`}>
-          <h1 className="text-lg sm:text-xl font-bold mb-3 text-[#03CF30]">Select Your Region</h1>
+          <h1 className="text-lg sm:text-xl font-bold mb-3 text-[#6b46c1]">Select Your Region</h1>
           <div className="flex flex-col gap-3">
             <button onClick={() => handleRegionSelect('US')} className={primaryButtonStyle}>
               <span role="img" aria-label="USA Flag">🇺🇸</span> United States
@@ -77,7 +77,7 @@ export default function Home() {
     return (
       <div className={containerBaseStyle}>
         <main className={`${cardBaseStyle} text-left`}>
-          <h1 className="text-[#03CF30] mb-4 text-2xl sm:text-3xl text-center font-extrabold">How It Works:</h1>
+          <h1 className="text-[#6b46c1] mb-4 text-2xl sm:text-3xl text-center font-extrabold">How It Works:</h1>
           <div className="space-y-3 mb-5">
             {[ 
               'Tap "Claim Now!" Button Below',
@@ -85,7 +85,7 @@ export default function Home() {
               'Complete 2-5 Partner Offers',
               'Receive Your Balance & Repeat'
             ].map((title, i) => (
-              <div key={i} className="flex items-start gap-3 p-3 bg-[#f0fff2] rounded-md shadow-sm">
+              <div key={i} className="flex items-start gap-3 p-3 bg-[#f5f3ff] rounded-md shadow-sm">
                 <div className={stepNumberStyle}>{i+1}</div>
                 <h3 className={stepTitleStyle}>{title}</h3>
               </div>
