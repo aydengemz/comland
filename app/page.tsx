@@ -9,7 +9,7 @@ type Region = 'US' | 'CA' | null;
 export default function Home() {
   const [currentView, setCurrentView]     = useState<View>('regionSelect');
   const [selectedRegion, setSelectedRegion] = useState<Region>(null);
-  const affiliateBaseLink = 'https://rewarrdsgiant.com/aff_c?offer_id=1232&aff_id=139418&source=mmm11';
+  const affiliateBaseLink = 'https://rewarrdsgiant.com/aff_c?offer_id=1232&aff_id=139418&source=2step11';
   const affiliateLink     = affiliateBaseLink + (selectedRegion ? `&sub1=${selectedRegion}` : '');
 
   const handleRegionSelect = (region: Region) => {
