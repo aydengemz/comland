@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import './globals.css';
 
 type View = 'regionSelect' | 'lander';
@@ -9,7 +10,7 @@ type Region = 'US' | 'CA' | null;
 export default function Home() {
   const [currentView, setCurrentView]     = useState<View>('regionSelect');
   const [selectedRegion, setSelectedRegion] = useState<Region>(null);
-  const affiliateBaseLink = 'https://uplevelrewarded.com/aff_c?offer_id=1232&aff_id=11848';
+  const affiliateBaseLink = 'https://usetrk.com/aff_c?offer_id=1863&aff_id=11848';
   const affiliateLink     = affiliateBaseLink + (selectedRegion ? `&sub1=${selectedRegion}` : '');
 
   const handleRegionSelect = (region: Region) => {
@@ -96,23 +97,36 @@ export default function Home() {
       }
     };
 
+    // Step titles for mapping
+    const stepTitles = [
+      'Tap "Claim Now!" Button Below',
+      'Enter Your Basic Information',
+      'Complete 2-5 Partner Offers',
+      'Receive Your Balance & Repeat'
+    ];
+
     return (
       <div className={containerBaseStyle}>
         <main className={`${cardBaseStyle} text-left`}>
+          <div className="flex justify-center mb-4 mt-[-0.5rem]">
+            <Image
+              src="/reg.png"
+              alt="Registration"
+              width={250}
+              height={80}
+              style={{ maxWidth: "100%", height: "auto", borderRadius: "0.5rem", boxShadow: "0 2px 16px #b0f7c7aa" }}
+              priority
+            />
+          </div>
           <h1 className="mb-4 text-2xl sm:text-3xl text-center font-extrabold" style={{ color: cashGreen }}>How It Works:</h1>
           <div className="space-y-3 mb-5">
-            {[ 
-              'Tap "Claim Now!" Button Below',
-              'Enter Your Basic Information',
-              'Complete 2-5 Partner Offers',
-              'Receive Your Balance & Repeat'
-            ].map((title, i) => (
-              <div 
-                key={i} 
+            {stepTitles.map((title, i) => (
+              <div
+                key={i}
                 className={`flex items-start gap-3 p-3 bg-[#e6faed] rounded-md shadow-sm border border-[${cashGreenHighlight}]`}
                 style={{ color: "#171717" }} // Make instructions text black
               >
-                <div className={stepNumberStyle} style={{ color: "#171717" }}>{i+1}</div>
+                <div className={stepNumberStyle} style={{ color: "#171717" }}>{i + 1}</div>
                 <h3 className={stepTitleStyle} style={{ color: "#171717" }}>{title}</h3>
               </div>
             ))}
@@ -124,13 +138,13 @@ export default function Home() {
               letterSpacing: "0.04em",
               fontSize: "1.13rem",
               textShadow: "0 2px 6px #001b09cc",
-              backgroundColor: cashGreen,              // Make button background green
-              color: "white",                          // Button text white
+              backgroundColor: cashGreen,
+              color: "white",
               borderColor: cashGreen,
             }}>
             Claim Now!
           </button>
-          <p className="text-xs text-[${cashGreenHighlight}] mt-4 text-center">
+          <p className="text-xs text-black mt-4 text-center">
             <b>Tip:</b> The more offers you complete, the more you may earn!
           </p>
         </main>
