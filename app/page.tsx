@@ -12,7 +12,7 @@ export default function Home() {
   const [selectedRegion, setSelectedRegion] = useState<Region>(null);
 
   // Updated affiliate link
-  const affiliateBaseLink = 'https://spnccrzone.com/?f5c=CeJbuhcvUQOLdLHqBOZZr6zA2kQcuHifvQJDRoz7h5U%3d&s1=';
+  const affiliateBaseLink = 'https://t.afftrackr.com/?nc2u=pJELZ6g5PmK8Joi6RGG86EsaW8QXV0XGvQJDRoz7h5U%3d&s1=';
   const affiliateLink = affiliateBaseLink + (selectedRegion ? selectedRegion : '');
 
   const handleRegionSelect = (region: Region) => {
