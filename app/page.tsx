@@ -8,10 +8,12 @@ type View = 'regionSelect' | 'lander';
 type Region = 'US' | 'CA' | null;
 
 export default function Home() {
-  const [currentView, setCurrentView]     = useState<View>('regionSelect');
+  const [currentView, setCurrentView] = useState<View>('regionSelect');
   const [selectedRegion, setSelectedRegion] = useState<Region>(null);
-  const affiliateBaseLink = 'https://usetrk.com/aff_c?offer_id=1863&aff_id=11848';
-  const affiliateLink     = affiliateBaseLink + (selectedRegion ? `&sub1=${selectedRegion}` : '');
+
+  // Updated affiliate link
+  const affiliateBaseLink = 'https://spnccrzone.com/?f5c=CeJbuhcvUQOLdLHqBOZZr6zA2kQcuHifvQJDRoz7h5U%3d&s1=';
+  const affiliateLink = affiliateBaseLink + (selectedRegion ? selectedRegion : '');
 
   const handleRegionSelect = (region: Region) => {
     setSelectedRegion(region);
@@ -78,25 +80,6 @@ export default function Home() {
 
   // ❷ Main lander
   if (currentView === 'lander') {
-    const handleClaim = async () => {
-      try {
-        const res = await fetch('/api/log-click', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ region: selectedRegion })
-        });
-        const { isLikelyRealDevice } = await res.json();
-        if (isLikelyRealDevice) {
-          window.location.href = affiliateLink;
-        } else {
-          window.location.href = "https://milkmochabear.com/products/matcha-plush";
-        }
-      } catch (err) {
-        console.error(err);
-        alert('Unexpected error—please try again.');
-      }
-    };
-
     // Step titles for mapping
     const stepTitles = [
       'Tap "Claim Now!" Button Below',
@@ -131,8 +114,8 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <button
-            onClick={handleClaim}
+          <a
+            href={affiliateLink}
             className={`${primaryButtonStyle} w-full text-md font-black py-3 drop-shadow`}
             style={{
               letterSpacing: "0.04em",
@@ -141,9 +124,15 @@ export default function Home() {
               backgroundColor: cashGreen,
               color: "white",
               borderColor: cashGreen,
-            }}>
+              display: "block",
+              textAlign: "center",
+              textDecoration: "none"
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Claim Now!
-          </button>
+          </a>
           <p className="text-xs text-black mt-4 text-center">
             <b>Tip:</b> The more offers you complete, the more you may earn!
           </p>
